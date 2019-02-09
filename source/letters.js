@@ -1,6 +1,6 @@
 'use strict';
 
-const letters = function DoIt(str, flag) {
+const letters = (str, flag) => {
     var res = "";
 
     if (flag === undefined) {
@@ -22,6 +22,6 @@ const letters = function DoIt(str, flag) {
             }
         }
     }
-    
+
     return res;
 }
