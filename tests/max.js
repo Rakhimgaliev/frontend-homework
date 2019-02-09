@@ -25,4 +25,11 @@ QUnit.module('Тестируем функцию max', function () {
 		assert.strictEqual(max([ Infinity, 100000, 0 ]), Infinity);
 		assert.strictEqual(max([ 0, -1000, -Infinity ]), 0);
 	});
+
+	QUnit.test('Возвращает максимальное из трёх одинаковых чисел', function (assert) {
+		assert.strictEqual(max([1, 1, 1]), 1, 'max([1, 1, 1]) === 1');
+		assert.strictEqual(max([0, 0, 0]), 0, 'max([0, 0, 0]) === 0');
+		assert.strictEqual(max([-1, -1, -1]), -1, 'max([-1, -1, -1]) === -1');
+	});
+	
 });

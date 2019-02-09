@@ -53,4 +53,9 @@ QUnit.module('Тестируем функцию letters', function () {
 		assert.strictEqual(letters('от топота копыт', false), 'а копыт');
 		assert.strictEqual(letters('hello world', false), 'he world');
 	});
+
+	QUnit.test('Возвращает пустую строку, если передан неверный флаг', function (assert) {
+		assert.strictEqual(letters('121', 123), '');
+		assert.strictEqual(letters('wWw', "change"), '');
+	});
 });
