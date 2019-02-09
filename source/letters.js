@@ -2,6 +2,7 @@
 
 const letters = function DoIt(str, flag) {
     var res = "";
+
     if (flag === undefined) {
         for (var i = 0; i < str.length; i++) {
             if (str.lastIndexOf(str[i]) == str.indexOf(str[i])) {
@@ -21,5 +22,6 @@ const letters = function DoIt(str, flag) {
             }
         }
     }
+    
     return res;
 }
