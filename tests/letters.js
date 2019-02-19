@@ -58,4 +58,11 @@ QUnit.module('Тестируем функцию letters', function () {
 		assert.strictEqual(letters('121', 123), '');
 		assert.strictEqual(letters('wWw', "change"), '');
 	});
+
+	QUnit.test('Возвращает пустую строку, если передан неверный аргумент в качестве строки', function (assert) {
+		assert.strictEqual(letters(123, false), '');
+		assert.strictEqual(letters(true, true), '');
+		assert.strictEqual(letters(true), '');
+		assert.strictEqual(letters(), '');
+	});
 });
