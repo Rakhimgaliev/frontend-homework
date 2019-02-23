@@ -3,28 +3,28 @@
 let letters = (str, flag) => {
     let res = "";
 
-    if (typeof str === "undefined") {
+    if (typeof str !== "string") {
         return res;
     }
     
     if (typeof flag === "undefined") {
-        for (let i = 0; i < str.length; i++) {
-            if (str.lastIndexOf(str[i]) == str.indexOf(str[i])) {
-                res += str[i];
+        for (let ch of str) {
+            if (str.lastIndexOf(ch) == str.indexOf(ch)) {
+                res += ch;
             }
         }
     } else if (flag === true) {
-        for (let i = 0; i < str.length; i++) {
-            if (i == str.indexOf(str[i])) {
-                res += str[i];
+        [...str].forEach((ch, i) => {
+            if (i == str.indexOf(ch)) {
+                res += ch;
             }
-        }
+        })
     } else if (flag === false) {
-        for (let i = 0; i < str.length; i++) {
-            if (i == str.lastIndexOf(str[i])) {
-                res += str[i];
+        [...str].forEach((ch, i) => {
+            if (i == str.lastIndexOf(ch)) {
+                res += ch;
             }
-        }
+        })
     }
 
     return res;
