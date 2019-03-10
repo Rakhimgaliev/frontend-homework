@@ -12,25 +12,20 @@ let letters = (str, flag) => {
         return res;
     }
     
-    if (typeof flag === "undefined") {
-        for (let ch of str) {
-            if (str.lastIndexOf(ch) == str.indexOf(ch)) {
+    [...str].forEach((ch, i) => {
+        if (typeof flag === "undefined") {
+            if (str.lastIndexOf(ch) === str.indexOf(ch)) {
+                res += ch;
+            }
+        } else if (flag === true) {
+            if (i === str.indexOf(ch)) {
+                res += ch;
+            }
+        } else if (flag === false) {
+            if (i === str.lastIndexOf(ch)) {
                 res += ch;
             }
         }
-    } else if (flag === true) {
-        [...str].forEach((ch, i) => {
-            if (i == str.indexOf(ch)) {
-                res += ch;
-            }
-        })
-    } else if (flag === false) {
-        [...str].forEach((ch, i) => {
-            if (i == str.lastIndexOf(ch)) {
-                res += ch;
-            }
-        })
-    }
-
+    })
     return res;
 }
