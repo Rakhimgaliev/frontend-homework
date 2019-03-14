@@ -8,30 +8,29 @@
  *  символов, если false - последний.
  */
 let letters = (str, flag) => {
-    let res = "";
 
     if (typeof str !== "string") {
-        return res;
+        return "";
     }
 
     if (typeof flag !== "boolean" && typeof flag !== "undefined") {
-        return res;
+        return "";
     }
     
-    [...str].forEach((ch, i) => {
+    return [...str].reduce((accumulator, ch, i, str) => {
         if (typeof flag === "undefined") {
             if (str.lastIndexOf(ch) === str.indexOf(ch)) {
-                res += ch;
+                accumulator += ch;
             }
         } else if (flag === true) {
             if (i === str.indexOf(ch)) {
-                res += ch;
+                accumulator += ch;
             }
         } else if (flag === false) {
             if (i === str.lastIndexOf(ch)) {
-                res += ch;
+                accumulator += ch;
             }
         }
+        return accumulator;
     })
-    return res;
 }
