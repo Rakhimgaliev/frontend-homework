@@ -17,7 +17,7 @@ let letters = (str, flag) => {
         return "";
     }
     
-    return [...str].reduce((accumulator, ch, i, str) => {
+    return [...str].reduce((accumulator, ch, i  ) => {
         if (typeof flag === "undefined") {
             if (str.lastIndexOf(ch) === str.indexOf(ch)) {
                 accumulator += ch;
@@ -32,5 +32,5 @@ let letters = (str, flag) => {
             }
         }
         return accumulator;
-    })
+    }, "")
 }
