@@ -18,19 +18,12 @@ let letters = (str, flag) => {
     }
     
     return [...str].reduce((accumulator, ch, i  ) => {
-        if (typeof flag === "undefined") {
-            if (str.lastIndexOf(ch) === str.indexOf(ch)) {
-                accumulator += ch;
-            }
-        } else if (flag === true) {
-            if (i === str.indexOf(ch)) {
-                accumulator += ch;
-            }
-        } else if (flag === false) {
-            if (i === str.lastIndexOf(ch)) {
-                accumulator += ch;
-            }
+        if (typeof flag === "undefined" && str.lastIndexOf(ch) === str.indexOf(ch)
+            || flag === true && i === str.indexOf(ch)
+            || flag === false && i === str.lastIndexOf(ch)) {
+            return accumulator + ch;
+        } else {
+            return accumulator + "";
         }
-        return accumulator;
     }, "")
 }
