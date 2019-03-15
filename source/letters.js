@@ -22,8 +22,7 @@ let letters = (str, flag) => {
             || flag === true && i === str.indexOf(ch)
             || flag === false && i === str.lastIndexOf(ch)) {
             return accumulator + ch;
-        } else {
-            return accumulator + "";
         }
-    }, "")
+        return accumulator;
+    }, "");
 }
